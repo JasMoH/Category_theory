@@ -1,0 +1,10 @@
+[package]
+name = "chapter1" # the name of the package
+version = "0.1.0"    # the current version, obeying semver
+authors = ["Jason Morelli-Harlan <jMorelliHarlan@gmail.com"]
+
+[lib]
+name = "chapter1"
+path = "src/ch1.rs"
+test = true
+doc = true
