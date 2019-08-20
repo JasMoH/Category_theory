@@ -11,6 +11,7 @@ I've been wanting to pick up category theory as a formalization of design patter
 I've read through all of section 1 and worked through some of the problems, to get a gist of the topic and a feel for where this is going. I'm now going back and actually working all the problems, taking clearer notes on the definitions, etc.
 
 * [Chapter 1: Category: The Essence of Composition](ch1.md)
+* [Chapter 2: Types and Functions](ch2.md)
 
 # Other (semi)Related Resources I'm reading, related concepts, and thoughts
 
