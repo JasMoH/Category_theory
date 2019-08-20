@@ -27,7 +27,7 @@ assert_eq!(one_true_random_value,mem.eval(()));
 # 3
 Memoizing an PRNG over it's seed will work as expected, as these are ultimately deterministic functions that walk through a chaotic sequence with (hopefully) nice statistical properties.
 
-A true RNG library that draws entropy from some external source will fail the same as in #2, as again we are not capturing all of the side effecting inputs to the RNG. Typically these won't take a seed as they are pure read functions, but they are sometimes padded out with cheaper PRNG seaded on the (hopefully) true RNG>
+A true RNG library that draws entropy from some external source will fail the same as in #2, as again we are not capturing all of the side effecting inputs to the RNG. Typically these won't take a seed as they are just readers from an entropy source, but they are sometimes padded out with "cheaper" PRNG seeded on the (hopefully) true RNG.
 
 # 4
 ## a
@@ -44,7 +44,7 @@ or
 ```haskell
 fact n = product [1..n]
 ```
-are epure functions. They has no side effects, can be memoized, etc.
+are pure functions. They has no side effects, can be memoized, etc.
 
 
 ## b
