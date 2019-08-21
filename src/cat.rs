@@ -108,3 +108,54 @@ impl<'a, T1, T2> Memoize<T1,T2>
 }
 
 
+//chapter 4
+
+/**
+```
+assert!(cat::safe_reciprocal(0.0).is_none());
+assert_eq!(1.0,cat::safe_reciprocal(1.0).unwrap());
+```
+*/
+
+pub fn safe_reciprocal(x: f64) -> Option<f64>{
+	if x == 0.0{
+		return None
+	}
+	else{
+		return Some(1.0/x)
+	}
+}
+
+pub fn safe_root(x: f64) -> Option<f64>{
+	if x > 0.0 {
+		return Some(x.sqrt())
+	}
+	else{
+		return None
+	}
+}
+
+pub fn safe_id<T>(x: T) -> Option<T>{
+	return Some(x)
+}
+
+/**
+```
+let f = cat::safe_compose(cat::safe_reciprocal,cat::safe_root);
+assert!(f(0.0).is_none());
+assert!(f(-1.0).is_none());
+assert_eq!(1.0,f(1.0).unwrap());
+assert_eq!(0.5,f(4.0).unwrap());
+```
+*/
+pub fn safe_compose<A,B,C>(f: impl Fn(A) -> Option<B>, g: impl Fn(B)->Option<C>) -> impl Fn(A) -> Option<C>
+{
+	move |x| {
+		let y = f(x);
+		match y{
+			None => None,
+			Some(result) => g(result),
+		}
+	}
+}
+
