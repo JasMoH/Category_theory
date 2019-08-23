@@ -159,3 +159,72 @@ pub fn safe_compose<A,B,C>(f: impl Fn(A) -> Option<B>, g: impl Fn(B)->Option<C>)
 	}
 }
 
+
+
+//chapter 5
+
+/**
+problem 4
+implement either
+
+
+*/
+
+#[derive(Copy, Clone)]
+pub struct Either<L,R> {
+	left: Option<L>,
+	right: Option<R>
+}
+
+impl<L,R> Either<L,R>
+	{
+	pub fn left(val: L) -> Either<L,R>{
+		Either{
+			left: Some(val),
+			right: None
+		}
+	}
+
+	pub fn right(val: R) -> Either<L,R>{
+		Either{
+			left: None,
+			right: Some(val)
+		}
+	}
+
+	pub fn is_left(&self) -> bool{
+		self.left.is_some()
+	}
+	pub fn is_right(&self) -> bool{
+		return self.right.is_some()
+	}
+
+	pub fn get_left(self) -> L{
+		return self.left.unwrap()
+	}
+
+	pub fn get_right(self) -> R{
+		return self.right.unwrap()
+	}
+}
+
+/**
+exercise 5
+
+```
+
+```
+*/
+pub fn m(e: Either<i64,bool>) -> i64{
+	if e.is_left(){
+		return e.get_left()
+	}
+	else{
+		if e.get_right(){
+			return 0
+		}
+		else {
+			return 1
+		}
+	}
+}

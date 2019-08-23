@@ -14,6 +14,7 @@ I've read through all of section 1 and worked through some of the problems, to g
 * [Chapter 2: Types and Functions](ch2.md)
 * [Chapter 3: Categories Great and Small](ch3.md)
 * [Chapter 4: Kleisli Categories](ch4.md)
+* [Chapter 5: Products and Coproducts](ch5.md)
 
 # Other (semi)Related Resources I'm reading, related concepts, and thoughts
 

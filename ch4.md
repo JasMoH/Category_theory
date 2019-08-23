@@ -1,4 +1,4 @@
-#1
+# 1
 ```rust
 pub fn safe_id<T>(x: T) -> Option<T>{
 	return Some(x)
@@ -8,7 +8,7 @@ pub fn safe_id<T>(x: T) -> Option<T>{
 see safe_compose bellow for the lifted composition definition
 
 
-#2
+# 2
 ```rust
 pub fn safe_reciprocal(x: f64) -> Option<f64>{
 	if x == 0.0{
@@ -19,7 +19,7 @@ pub fn safe_reciprocal(x: f64) -> Option<f64>{
 	}
 }
 ```
-#3
+# 3
 Definition of safe_root in rust, as well as the lifted identity
 ```rust
 pub fn safe_root(x: f64) -> Option<f64>{
