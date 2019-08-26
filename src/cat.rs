@@ -1,3 +1,5 @@
+#![feature(generators, generator_trait)]
+
 // chapter 1
 // problem 1: identity function in rust
 
@@ -228,3 +230,40 @@ pub fn m(e: Either<i64,bool>) -> i64{
 		}
 	}
 }
+
+// chapter 7
+
+/**
+reader functor
+```
+//create a side effecting closure
+
+let l = 0;
+
+
+let f = |b|{
+	if b{
+		0
+	}
+	else{
+		100
+	}
+};
+
+pub fn g(x: i64) -> i64{
+	x+5
+} 
+
+let r = cat::reader(f,g);
+
+assert_eq!(5,r((true)));
+
+```
+*/
+
+
+pub fn reader<R,A,B>(f: impl Fn(R)->A, g: impl Fn(A)-> B) 
+	-> impl Fn(R)->B{
+	move |x| g(f(x))
+}
+

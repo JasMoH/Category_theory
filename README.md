@@ -15,6 +15,8 @@ I've read through all of section 1 and worked through some of the problems, to g
 * [Chapter 3: Categories Great and Small](ch3.md)
 * [Chapter 4: Kleisli Categories](ch4.md)
 * [Chapter 5: Products and Coproducts](ch5.md)
+* [Chapter 6: Simple Algebraic Data Types](ch6.md)
+* [Chapter 7: Functors](ch7.md)
 
 # Other (semi)Related Resources I'm reading, related concepts, and thoughts
 
